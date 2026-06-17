@@ -1,18 +1,32 @@
-import Image from "next/image"
-
-const iphones = [
-    "/images/iphones/iphone_17.jpg",
-    "/images/iphones/iphone_17e.jpg",
-    "/images/iphones/iphone_17pro.jpg",
-    "/images/iphones/iphone_air.jpg",
-]
+import GradientBlinds from "@/components/GradientBlinds"
+import Hero from "@/components/home/Hero"
 
 export default function Home() {
     return (
-        <div className="mt-22 mx-auto grid grid-cols-4 gap-6 ">
-            {iphones.map((iphone) => (
-                <Image key={iphone} src={iphone} alt="iPhone" width={344} height={366} className="rounded-4xl" />
-            ))}
+        <div className="">
+            <main>
+                <section className="relative min-h-screen">
+                    <div className="absolute inset-0">
+                        <GradientBlinds
+                            gradientColors={["#4662ff", "#001690"]}
+                            angle={25}
+                            noise={0.05}
+                            blindCount={25}
+                            blindMinWidth={90}
+                            mouseDampening={0.25}
+                            mirrorGradient
+                            spotlightRadius={0.6}
+                            spotlightSoftness={0.5}
+                            spotlightOpacity={0.25}
+                            distortAmount={0}
+                            shineDirection="right"
+                        />
+                    </div>
+                    {/* <div className="relative z-10">
+                        <Hero />
+                    </div> */}
+                </section>
+            </main>
         </div>
     )
 }
